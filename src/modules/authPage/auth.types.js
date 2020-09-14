@@ -1,0 +1,7 @@
+const SET_USER = 'SET_USER';
+const GET_USER = 'GET_USER';
+const LOGIN = 'LOGIN';
+const LOGOUT = 'LOGOUT';
+const REGISTER = 'REGISTER';
+
+export { SET_USER, LOGIN, LOGOUT, REGISTER, GET_USER };
