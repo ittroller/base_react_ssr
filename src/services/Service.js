@@ -131,7 +131,7 @@ class Request {
                 reject(error);
               });
           });
-        } else if (res.status === 401 && !res.headers.get('token-expired')) {
+        } else if (!res.headers.get('token-expired')) {
           localStorage.clear();
           window.location.reload();
           return new Promise((resolve, reject) => {

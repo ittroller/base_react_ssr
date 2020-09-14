@@ -27,7 +27,6 @@ module.exports = {
     'object-shorthand': 'off',
     'no-console': 'off',
     'no-use-before-define': 'off',
-    'react/prop-types': [2, { ignore: ['children'] }],
     'react/require-default-props': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/prop-types': 'off',
