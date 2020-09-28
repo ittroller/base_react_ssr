@@ -1,7 +1,11 @@
 import loadable from '@loadable/component';
 
 import { PublicLayout } from '../layouts';
-import Public from '../modules/PublicPage/pages/Public';
+
+const HomeContainer = loadable(async () => {
+  const { HomeContainer } = await import('../modules');
+  return HomeContainer;
+});
 const RegisterContainer = loadable(async () => {
   const {
     AuthContainer: { RegisterContainer },
@@ -20,7 +24,7 @@ const publicRouters = {
   subRoutes: [
     {
       path: '/',
-      component: Public,
+      component: HomeContainer,
       exact: true,
     },
     {

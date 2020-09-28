@@ -17,7 +17,7 @@ i18n.use(initReactI18next).init({
   debug: false,
   ns: ['translations'],
   defaultNS: 'translations',
-  keySeparator: false,
+  keySeparator: '.',
   interpolation: {
     escapeValue: false,
     formatSeparator: ',',

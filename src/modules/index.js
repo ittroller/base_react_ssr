@@ -1,5 +1,6 @@
-import { AuthContainer } from './authPage';
-import { AppContainer } from './homePage';
+import { AuthContainer } from './public';
+import { HomeContainer } from './public';
 import { NotFound } from './NotFound';
+import { DashboardContainer } from './private';
 
-export { AuthContainer, AppContainer, NotFound };
+export { AuthContainer, HomeContainer, DashboardContainer, NotFound };

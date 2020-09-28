@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import { authReducer } from '../modules/authPage';
+import { authReducer } from '../modules/public/authPage';
 
 const rootReducer = () =>
   combineReducers({
