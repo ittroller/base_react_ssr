@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, withRouter } from 'react-router-dom';
 
-import { Form, Input, Button, Checkbox, Layout, Row, Col } from 'antd';
+import { Form, Input, Button, Layout, Row, Col } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
 // const options = [
@@ -15,17 +15,20 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons';
 const Login = props => {
   const { t } = useTranslation();
 
+  const { history } = props;
+
   //   const [email, setEmail] = useState('');
   //   const [password, setPassword] = useState('');
 
   const [account, setAccount] = useState({
-    email: '',
-    password: '',
+    email: 'ittroller8@gmail.com',
+    password: 'abc123',
   });
 
   const onFinish = values => {
     console.log('Received values of form: ', values);
-    props.login({ email, password });
+    const { email, password } = values;
+    props.login({ email, password, history });
   };
 
   //   const onLogin = event => {
@@ -44,14 +47,7 @@ const Login = props => {
         <Layout className="auth-form">
           <h3 className="head-form">{t('auth_page.label.login')}</h3>
 
-          <Form
-            name="normal_login"
-            className="login-form"
-            initialValues={{
-              remember: true,
-            }}
-            onFinish={onFinish}
-          >
+          <Form name="normal_login" className="login-form" initialValues={account} onFinish={onFinish}>
             <Form.Item
               name="email"
               rules={[{ type: 'email' }, { required: true }]}
@@ -63,9 +59,9 @@ const Login = props => {
               <Input prefix={<LockOutlined className="site-form-item-icon" />} type="password" placeholder="Password" />
             </Form.Item>
             <Form.Item>
-              <Form.Item className="remember-me" name="remember" valuePropName="checked" noStyle>
+              {/* <Form.Item className="remember-me" name="remember" valuePropName="checked" noStyle>
                 <Checkbox className="remember-me">Remember me</Checkbox>
-              </Form.Item>
+              </Form.Item> */}
 
               <a className="login-form-forgot" href="">
                 Forgot password

@@ -13,8 +13,6 @@ const privateRouters = {
     {
       path: '/dashboard',
       component: DashboardContainer,
-      exact: true,
-      isAuth: true,
     },
   ],
 };

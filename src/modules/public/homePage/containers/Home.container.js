@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { onCountUp, onCountDown } from '../app.action';
 import { authAction } from '../../authPage';
 
-import HomeComponent from '../pages/Home.component';
+import { HomeComponent } from '../pages';
 
 const mapStateToProps = state => ({
   ...state,
