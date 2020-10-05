@@ -1,5 +1,5 @@
 import { get } from 'lodash';
-import Service from '../../services';
+import Service from '../../../services';
 
 const API = {
   login: async params => {

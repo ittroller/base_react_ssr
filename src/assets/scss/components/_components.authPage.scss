@@ -1,0 +1,26 @@
+.auth-page {
+  .auth-form {
+    margin-top: 20px;
+  }
+  .head-form {
+    text-transform: uppercase;
+    padding-top: 10px;
+  }
+  .login-form {
+    padding: 10px 30px;
+
+    .login-form-forgot {
+      float: right;
+    }
+    .ant-col-rtl .login-form-forgot {
+      float: left;
+    }
+    .login-form-button {
+      width: 100%;
+    }
+
+    .remember-me {
+      float: left;
+    }
+  }
+}

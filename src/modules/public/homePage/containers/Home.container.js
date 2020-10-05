@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { onCountUp, onCountDown } from '../app.action';
-import { logout } from '../../authPage';
+import { authAction } from '../../authPage';
 
-import AppComponent from '../pages/App.component';
+import HomeComponent from '../pages/Home.component';
 
 const mapStateToProps = state => ({
   ...state,
@@ -14,8 +14,8 @@ const mapDispatchToProps = dispatch =>
     {
       onCountUp,
       onCountDown,
-      logout,
+      logout: authAction.logout,
     },
     dispatch,
   );
-export default connect(mapStateToProps, mapDispatchToProps)(AppComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeComponent);

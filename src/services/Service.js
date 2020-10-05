@@ -199,7 +199,7 @@ class Request {
 }
 
 const Service = Request.create({
-  endpoint: `${process.env.REACT_APP_DOMAIN}`,
+  endpoint: `${process.env.RAZZLE_DOMAIN}`,
   handleToken: false,
 });
 

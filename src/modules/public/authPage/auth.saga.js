@@ -1,7 +1,7 @@
 import { takeEvery, put, call } from 'redux-saga/effects';
 import { LOGIN, LOGOUT, REGISTER, SET_USER, GET_USER } from './auth.types';
-import API from './api';
-import { Functional } from '../../utils';
+import API from './auth.api';
+import { Functional } from '../../../utils';
 import { setUser } from './auth.action';
 
 function* login() {

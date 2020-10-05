@@ -2,14 +2,17 @@ import loadable from '@loadable/component';
 
 import { PrivateLayout } from '../layouts';
 
-const AppContainer = loadable(() => import('../modules'));
+const DashboardContainer = loadable(async () => {
+  const { DashboardContainer } = await import('../modules');
+  return DashboardContainer;
+});
 
 const privateRouters = {
   layout: PrivateLayout,
   subRoutes: [
     {
       path: '/dashboard',
-      component: AppContainer,
+      component: DashboardContainer,
       exact: true,
       isAuth: true,
     },
