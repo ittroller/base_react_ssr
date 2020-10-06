@@ -4,8 +4,9 @@ import API from './auth.api';
 import { Functional } from '../../../utils';
 import { setUser } from './auth.action';
 
-function* login() {
+function* login(action) {
   try {
+    const { history } = action.data;
     const user = yield call(API.login, {
       email: 'ittroller8@gmail.com',
       password: 'Minh-1995',
@@ -16,7 +17,7 @@ function* login() {
       localStorage.setItem('token', user.token);
       localStorage.setItem('refresh_token', user.refresh_token);
       yield put({ type: SET_USER, user });
-      yield put(push('/dashboard'));
+      yield history.push('/dashboard');
     }
   } catch (error) {
     const newError = yield call(Functional.generateMessage, error);
